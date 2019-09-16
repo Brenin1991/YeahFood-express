@@ -1,0 +1,250 @@
+doctype html
+head
+  title Exemple - YeahFood!
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  meta(charset='UTF-8')
+  // Font
+  link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet')
+  link(rel='stylesheet' href='fonts/beyond_the_mountains-webfont.css' type='text/css')
+  // Stylesheets
+  link(href='plugin-frameworks/bootstrap.min.css' rel='stylesheet')
+  link(href='plugin-frameworks/swiper.css' rel='stylesheet')
+  link(href='fonts/ionicons.css' rel='stylesheet')
+  link(href='common/styles.css' rel='stylesheet')
+header
+  .container
+    a.logo(href='#')
+      img(src='images/logo-white.png' alt='Logo')
+    .right-area
+      h6
+        a.plr-20.color-white.btn-fill-primary(href='#') Cadastrar
+    // right-area
+    .right-area
+      h6
+        a.plr-20.color-white.btn-fill-primary(href='#') Entrar
+    // right-area
+    a.menu-nav-icon(data-menu='#main-menu' href='#')
+      i.ion-navicon
+    ul#main-menu.main-menu.font-mountainsre
+      li
+        a(href='index.html') PRINCIPAL
+      li
+        a(href='02_about_us.html') SOBRE N&Oacute;S
+      li
+        a(href='03_menu.html') SERVI&Ccedil;OS
+      li
+        a(href='04_blog.html') NOVIDADES
+      li
+        a(href='05_contact.html') CONTATO
+    .clearfix
+  // container
+section.bg-1.h-900x.main-slider.pos-relative
+  .triangle-up.pos-bottom
+  .container.h-100
+    .dplay-tbl
+      .dplay-tbl-cell.center-text.color-white
+        h5
+          b O MELHOR DA CIDADE
+        h1.mt-30.mb-15 Pizza &amp; Pasta
+        h5
+          a.btn-primaryc.plr-25(href='#menu')
+            b VEJA NOSSO MENU
+      // dplay-tbl-cell
+    // dplay-tbl
+  // container
+section
+  .container
+    .heading
+      img.heading-img(src='images/heading_logo.png' alt='')
+      h2#menu Menu
+    .row
+      .col-sm-12
+        ul.selecton.brdr-b-primary.mb-70
+          li
+            a.active(href='#' data-select='*')
+              b ALL
+          li
+            a(href='#' data-select='Sanduiches')
+              b COMIDAS
+          li
+            a(href='#' data-select='pasta')
+              b BEBIDAS
+          li
+            a(href='#' data-select='salads')
+              b SALADS
+          li
+            a(href='#' data-select='deserts')
+              b DESERTS
+      // col-sm-12
+    // row
+    .row
+      .col-md-6.food-menu.pizza
+        .sided-90x.mb-30
+          .s-left
+            img.br-3(src='images/menu-1-120x120.jpg' alt='Menu Image')
+          // s-left
+          .s-right
+            h5.mb-10
+              b Pizza Margherita
+              b.color-primary.float-right $12.00
+            p.pr-70
+              | Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst.
+          // s-right
+        // sided-90x
+      // food-menu
+      .col-md-6.food-menu.pizza.pasta
+        .sided-90x.mb-30
+          .s-left
+            img.br-3(src='images/menu-2-120x120.jpg' alt='Menu Image')
+          // s-left
+          .s-right
+            h5.mb-10
+              b Italian pasta
+              b.color-primary.float-right $20.00
+            p.pr-70
+              | Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis.
+          // s-right
+        // sided-90x
+      // food-menu
+      .col-md-6.food-menu.pasta
+        .sided-90x.mb-30
+          .s-left
+            img.br-3(src='images/menu-3-120x120.jpg' alt='Menu Image')
+          // s-left
+          .s-right
+            h5.mb-10
+              b Pizza Prosciuto
+              b.color-primary.float-right $12.00
+            p.pr-70
+              | Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst.
+          // s-right
+        // sided-90x
+      // food-menu
+      .col-md-6.food-menu.salads
+        .sided-90x.mb-30
+          .s-left
+            img.br-3(src='images/menu-4-120x120.jpg' alt='Menu Image')
+          // s-left
+          .s-right
+            h5.mb-10
+              b Broschettas
+              b.color-primary.float-right $6.00
+            p.pr-70
+              | Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis.
+          // s-right
+        // sided-90x
+      // food-menu
+      .col-md-6.food-menu.deserts
+        .sided-90x.mb-30
+          .s-left
+            img.br-3(src='images/menu-5-120x120.jpg' alt='Menu Image')
+          // s-left
+          .s-right
+            h5.mb-10
+              b Pizza Margherita
+              b.color-primary.float-right $12.00
+            p.pr-70
+              | Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst.
+          // s-right
+        // sided-90x
+      // food-menu
+      .col-md-6.food-menu.pizza
+        .sided-90x.mb-30
+          .s-left
+            img.br-3(src='images/menu-6-120x120.jpg' alt='Menu Image')
+          // s-left
+          .s-right
+            h5.mb-10
+              b Italian pasta
+              b.color-primary.float-right $20.00
+            p.pr-70
+              | Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis.
+          // s-right
+        // sided-90x
+      // food-menu
+      .col-md-6.food-menu.deserts
+        .sided-90x.mb-30
+          .s-left
+            img.br-3(src='images/menu-7-120x120.jpg' alt='Menu Image')
+          // s-left
+          .s-right
+            h5.mb-10
+              b Pizza Prosciuto
+              b.color-primary.float-right $12.00
+            p.pr-70
+              | Maecenas fermentum tortor id fringilla  molestie. In hac habitasse platea dictumst.
+          // s-right
+        // sided-90x
+      // food-menu
+      .col-md-6.food-menu.pasta
+        .sided-90x.mb-30
+          .s-left
+            img.br-3(src='images/menu-8-120x120.jpg' alt='Menu Image')
+          // s-left
+          .s-right
+            h5.mb-10
+              b Broschettas
+              b.color-primary.float-right $6.00
+            p.pr-70
+              | Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis.
+          // s-right
+        // sided-90x
+      // food-menu
+    // row
+    h6.center-text.mt-40.mt-sm-20.mb-30
+      a.btn-primaryc.plr-25(href='#')
+        b FAZER PEDIDO AGORA!
+  // container
+footer.pb-50.pt-70.pos-relative
+  .pos-top.triangle-bottom
+  .container-fluid
+    a(href='index.html')
+      img(src='images/logo-white.png' alt='Logo')
+    .pt-30
+      p.underline-secondary
+        b Endere&ccedil;o:
+      p 481 Creekside Lane Avila Beach, CA 93424 
+    .pt-30
+      p.underline-secondary.mb-10
+        b Fone:
+      a(href='tel:+53 345 7953 32453 ') +53 345 7953 32453 
+    .pt-30
+      p.underline-secondary.mb-10
+        b Email:
+      a(href='mailto:yourmail@gmail.com')  yourmail@gmail.com
+    ul.icon.mt-30
+      li
+        a(href='#')
+          i.ion-social-pinterest
+      li
+        a(href='#')
+          i.ion-social-facebook
+      li
+        a(href='#')
+          i.ion-social-twitter
+      li
+        a(href='#')
+          i.ion-social-dribbble-outline
+      li
+        a(href='#')
+          i.ion-social-linkedin
+      li
+        a(href='#')
+          i.ion-social-vimeo
+    p.color-light.font-9.mt-50.mt-sm-30
+      // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+      | Copyright &copy;
+      script.
+        document.write(new Date().getFullYear());
+      |  All rights reserved | This template is made with 
+      i.ion-heart(aria-hidden='true')
+      |  by 
+      a(href='https://colorlib.com' target='_blank') Colorlib
+      // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  // container
+// SCIPTS
+script(src='plugin-frameworks/jquery-3.2.1.min.js')
+script(src='plugin-frameworks/bootstrap.min.js')
+script(src='plugin-frameworks/swiper.js')
+script(src='common/scripts.js')

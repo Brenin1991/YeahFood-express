@@ -1,0 +1,11 @@
+extends ../base
+
+block conteudo
+  .card
+    .card-header Usuários Cadastrados
+    ul.list-group.list-group-flush
+      each usuario in usuarios
+        li.list-group-item
+          a(href=`/usuarios/${usuario.id}`)= usuario.nome
+          a.badge.badge-light(href=`mailto:${usuario.email}`)= usuario.email
+          a(href=`/usuarios/editar/${usuario.id}`) Editar 

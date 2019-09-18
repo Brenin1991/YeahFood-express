@@ -2,14 +2,16 @@ header
   .container
     a.logo(href='#')
       img(src='images/logo-white.png' alt='Logo')
-    .right-area
-      h6
-        a.plr-20.color-white.btn-fill-primary(href='cadastro') Cadastrar
-    // right-area
-    .right-area
-      h6
-        a.plr-20.color-white.btn-fill-primary(href='login') Entrar
-    // right-area
+    if session.usuario
+      .right-area
+        p Seja bem vindo, #{session.usuario.nome} 
+          a(href='/logout') [Deslogar]
+    else
+      .right-area
+        h6
+          a.plr-20.color-white.btn-fill-primary(href='login') Entrar
+      // right-area
+
     a.menu-nav-icon(data-menu='#main-menu' href='#')
       i.ion-navicon
     ul#main-menu.main-menu.font-mountainsre

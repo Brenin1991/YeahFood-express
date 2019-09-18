@@ -5,22 +5,33 @@ head
 body
 section.bg-1.h-900x.main-slider.pos-relative
 	.simple-login-container
-		h2 Login
-		.row
-			.col-md-12.form-group
-				input.form-control(type='text' placeholder='Nome')
-		.row
-			.col-md-12.form-group
-				input.form-control(type='text' placeholder='Email')
-		.row
-			.col-md-12.form-group
-				input.form-control(type='password' placeholder='Senha')
-		.row
-			.col-md-12.form-group
-				input.form-control(type='password' placeholder='Repetir senha')
-		.row
-			.col-md-12.form-group
-				input.form-control(type='text' placeholder='Localização')
-		.row
-			.col-md-12.form-group
-				button.plr-20.color-white.btn-fill-primary(type='submit') Cadastrar
+		.row.justify-content-center
+			.col-lg-4
+		if mensagem
+			.alert.alert-danger= mensagem
+		form(action='/cadastro' method='post')
+			.form-group 
+				label(for='nome') Nome
+				input.form-control#nome(type='text' name='nome' value=usuario.nome)
+				if erros && erros.nome.length > 0
+					each e in erros.nome
+						small.form-text.text-danger= e
+			.form-group
+				label(for='email') Email
+				input.form-control#email(type='email' name='email' value=usuario.email)
+				if erros && erros.email.length > 0
+					each e in erros.email
+						small.form-text.text-danger= e
+			.form-group
+				label(for='senha') Senha
+				input.form-control#senha(type='password' name='senha')
+				if erros && erros.senha.length > 0
+					each e in erros.senha
+						small.form-text.text-danger= e
+			.form-group
+				label(for='senhaConfirmacao') Confirme a Senha
+				input.form-control#senhaConfirmacao(type='password' name='senhaConfirmacao')
+				if erros && erros.senhaConfirmacao.length > 0
+					each e in erros.senhaConfirmacao
+						small.form-text.text-danger= e
+		button.btn.btn-primary(type='submit') Registrar

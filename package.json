@@ -4,7 +4,7 @@
   "description": "Delivery App",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon --ignore arquivos/ ."
   },
   "author": "Breno Campos Ribeiro",
   "license": "ISC",
@@ -13,6 +13,19 @@
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
+    "express-session": "^1.16.2",
     "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2"
   }
 }

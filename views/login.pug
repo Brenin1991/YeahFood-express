@@ -5,13 +5,18 @@ head
 body
 section.bg-1.h-900x.main-slider.pos-relative
 	.simple-login-container
-		h2 Login
-		.row
-			.col-md-12.form-group
-				input.form-control(type='text' placeholder='Email')
-		.row
-			.col-md-12.form-group
-				input.form-control(type='password' placeholder='Senha')
-		.row
-			.col-md-12.form-group
-				button.plr-20.color-white.btn-fill-primary(type='submit') Entrar
+		.row.justify-content-center
+			.col-lg-4
+		if mensagem
+			.alert.alert-danger= mensagem
+		form(action='/login' method='post')
+			.form-group
+				label(for='email') Email
+				input.form-control#email(type='email' name='email')
+				small.form-text.text-muted Igual ao seu cadastro.
+			.form-group
+				label(for='senha') Senha
+				input.form-control#senha(type='password' name='senha')
+			button.btn.btn-primary(type='submit') Login
+			h6 Não possiu uma conta?
+				a(href='/cadastro') [Cadastre-se]

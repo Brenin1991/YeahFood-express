@@ -14,14 +14,14 @@ exports.copiarSessaoParaViews = (req, res, next) => {
 
 exports.proteger = (req, res, next) => {
   if (!req.session.usuario) {
-    return res.redirect("/login");
+    return res.redirect("usuarios/login");
   }
   res.locals.session = req.session;
   next();
 };
 
 exports.login = (req, res) => {
-  res.status(200).render("login", {
+  res.status(200).render("usuarios/login", {
     titulo: "Login"
   });
 };
@@ -44,7 +44,7 @@ exports.validaLogin = (req, res) => {
   } else {
     statusCode = 401;
     mensagem = "Email ou senha incorretos";
-    view = "login";
+    view = "usuarios/login";
   }
 
   res.status(statusCode).render(view, { mensagem });
@@ -57,7 +57,7 @@ exports.logout = (req, res) => {
 };
 
 exports.registrar = (req, res) => {
-  res.status(200).render("cadastro", {
+  res.status(200).render("usuarios/cadastro", {
     titulo: "Cadastro",
     usuario: {}
   });
@@ -79,14 +79,14 @@ exports.validaRegistrar = (req, res) => {
     usuarioModel.usuarios.push(usuario);
     req.session.usuario = usuario;
     usuarioModel.salvaJSON(() => {
-      res.status(200).render("/", {
+      res.status(200).render("index", {
         usuario,
         mensagem: `Usuário ${usuario.nome} registrado com sucesso.`
       });
     });
   } else {
     const usuarioView = { nome, email };
-    res.status(401).render("cadastro", {
+    res.status(401).render("usuarios/cadastro", {
       usuario: usuarioView,
       erros
     });

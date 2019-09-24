@@ -1,5 +1,6 @@
 const session = require("express-session");
 const usuarioModel = require("../models/usuarioModel");
+const cardapioModel = require("../models/cardapioModel");
 
 exports.iniciarSessao = session({
   secret: "keyboard cat",
@@ -47,7 +48,10 @@ exports.validaLogin = (req, res) => {
     view = "usuarios/login";
   }
 
-  res.status(statusCode).render(view, { mensagem });
+  res.status(statusCode).render(view, {
+    cardapio: cardapioModel.cardapio,
+    titulo: "Principal"
+  });
 };
 
 exports.logout = (req, res) => {

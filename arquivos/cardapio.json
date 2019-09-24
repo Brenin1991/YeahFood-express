@@ -2,7 +2,19 @@
 	{
 		"id": 1,
 		"nome": "X-Bacon",
-		"tipo": "Comida",
-		"preco": "13,00"
+		"tipo": "comida",
+		"preco": "8,00"
+	},
+	{
+		"id": 2,
+		"nome": "Pesadão",
+		"tipo": "comida",
+		"preco": "15,00"
+	},
+	{
+		"id": 3,
+		"nome": "Coca-Cola 2 Litros",
+		"tipo": "bebida",
+		"preco": "6,00"
 	}
 ]

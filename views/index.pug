@@ -21,136 +21,42 @@ block conteudo
         // col-sm-12
       // row
       .row
-        .col-md-6.food-menu.pizza
-          .sided-90x.mb-30
-            .s-left
-              img.br-3(src='images/menu-1-120x120.jpg' alt='Menu Image')
-            // s-left
-            .s-right
-              h5.mb-10
-                b Pizza Margherita
-                b.color-primary.float-right $12.00
-              p.pr-70
-                | Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst.
-            .input-group.mb-3
-              .input-group-prepend
-                .input-group-text
-                  input(type='checkbox' aria-label='Checkbox for following text input')
-              select#inputGroupSelect01.custom-select
-                option(selected='1') 1
-                option(value='2') 2
-                option(value='3') 3
-                option(value='3') 3
-                option(value='3') 4
-                option(value='3') 5
-                option(value='3') 6
-                option(value='3') 7
-                option(value='3') 8
-                option(value='3') 9
-                option(value='3') 10
-            // s-right
-          // sided-90x
-        // food-menu
-        .col-md-6.food-menu.pizza.pasta
-          .sided-90x.mb-30
-            .s-left
-              img.br-3(src='images/menu-2-120x120.jpg' alt='Menu Image')
-            // s-left
-            .s-right
-              h5.mb-10
-                b Italian pasta
-                b.color-primary.float-right $20.00
-              p.pr-70
-                | Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis.
-            // s-right
-          // sided-90x
-        // food-menu
-        .col-md-6.food-menu.pasta
-          .sided-90x.mb-30
-            .s-left
-              img.br-3(src='images/menu-3-120x120.jpg' alt='Menu Image')
-            // s-left
-            .s-right
-              h5.mb-10
-                b Pizza Prosciuto
-                b.color-primary.float-right $12.00
-              p.pr-70
-                | Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst.
-            // s-right
-          // sided-90x
-        // food-menu
-        .col-md-6.food-menu.salads
-          .sided-90x.mb-30
-            .s-left
-              img.br-3(src='images/menu-4-120x120.jpg' alt='Menu Image')
-            // s-left
-            .s-right
-              h5.mb-10
-                b Broschettas
-                b.color-primary.float-right $6.00
-              p.pr-70
-                | Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis.
-            // s-right
-          // sided-90x
-        // food-menu
-        .col-md-6.food-menu.deserts
-          .sided-90x.mb-30
-            .s-left
-              img.br-3(src='images/menu-5-120x120.jpg' alt='Menu Image')
-            // s-left
-            .s-right
-              h5.mb-10
-                b Pizza Margherita
-                b.color-primary.float-right $12.00
-              p.pr-70
-                | Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst.
-            // s-right
-          // sided-90x
-        // food-menu
-        .col-md-6.food-menu.pizza
-          .sided-90x.mb-30
-            .s-left
-              img.br-3(src='images/menu-6-120x120.jpg' alt='Menu Image')
-            // s-left
-            .s-right
-              h5.mb-10
-                b Italian pasta
-                b.color-primary.float-right $20.00
-              p.pr-70
-                | Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis.
-            // s-right
-          // sided-90x
-        // food-menu
-        .col-md-6.food-menu.deserts
-          .sided-90x.mb-30
-            .s-left
-              img.br-3(src='images/menu-7-120x120.jpg' alt='Menu Image')
-            // s-left
-            .s-right
-              h5.mb-10
-                b Pizza Prosciuto
-                b.color-primary.float-right $12.00
-              p.pr-70
-                | Maecenas fermentum tortor id fringilla  molestie. In hac habitasse platea dictumst.
-            // s-right
-          // sided-90x
-        // food-menu
-        .col-md-6.food-menu.pasta
-          .sided-90x.mb-30
-            .s-left
-              img.br-3(src='images/menu-8-120x120.jpg' alt='Menu Image')
-            // s-left
-            .s-right
-              h5.mb-10
-                b Broschettas
-                b.color-primary.float-right $6.00
-              p.pr-70
-                | Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis.
-            // s-right
-          // sided-90x
-        // food-menu
-      // row
-      h6.center-text.mt-40.mt-sm-20.mb-30
-        a.btn-primaryc.plr-25(href='#')
-          b FAZER PEDIDO AGORA!
-    // container
+        form(action='/' method='post')
+        each c in cardapio
+          .form-group
+          .col-md-6.food-menu.pizza
+            .sided-90x.mb-30
+              .s-left
+                img.br-3(src=`images/menu-${c.id}-120x120.jpg` alt='Menu Image')
+              // s-left
+              .s-right
+                h5.mb-10
+                  b= c.nome
+                  b.color-primary.float-right= c.preco
+                p.pr-70
+                  | Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst.
+              .input-group.mb-3
+                .input-group-prepend
+                  .input-group-text
+                    input(type='checkbox' aria-label='Checkbox for following text input')
+                select#inputGroupSelect01.custom-select
+                  option(selected='1') 1
+                  option(value='2') 2
+                  option(value='3') 3
+                  option(value='3') 3
+                  option(value='3') 4
+                  option(value='3') 5
+                  option(value='3') 6
+                  option(value='3') 7
+                  option(value='3') 8
+                  option(value='3') 9
+                  option(value='3') 10
+              // s-right
+            // sided-90x
+          // food-menu
+      .row 
+        .col
+          h6.center-text.mt-40.mt-sm-20.mb-30
+            a.btn-primaryc.plr-25(href='#' type='submit')
+              b FAZER PEDIDO AGORA!
+        // container

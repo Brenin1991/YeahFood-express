@@ -3,6 +3,7 @@ const path = require("path");
 const usuarioRouter = require("./routes/usuarioRoutes");
 const autenticacaoRouter = require("./routes/autenticacaoRoutes");
 const autenticacaoController = require("./controllers/autenticacaoController");
+const cardapioModel = require("./models/cardapioModel");
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
@@ -20,7 +21,10 @@ app.use("/", autenticacaoRouter);
 app.use("/usuarios", usuarioRouter);
 
 app.get("/", (req, res) => {
-	res.status(200).render("index");
+	res.status(200).render("index", {
+		cardapio: cardapioModel.cardapio,
+		titulo: "Principal"
+	});
 });
 
 app.all("*", (req, res) => {

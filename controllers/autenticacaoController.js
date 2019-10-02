@@ -69,7 +69,7 @@ exports.registrar = (req, res) => {
 
 exports.validaRegistrar = (req, res) => {
   const { nome, email, senha, senhaConfirmacao } = req.body;
-
+  const cardapio = cardapioModel.cardapio;
   const erros = usuarioModel.validar(
     nome,
     email,
@@ -82,9 +82,11 @@ exports.validaRegistrar = (req, res) => {
     const usuario = { id, nome, email, senha };
     usuarioModel.usuarios.push(usuario);
     req.session.usuario = usuario;
+    req.session.cardapio = cardapio;
     usuarioModel.salvaJSON(() => {
       res.status(200).render("index", {
         usuario,
+        cardapio,
         mensagem: `Usuário ${usuario.nome} registrado com sucesso.`
       });
     });
